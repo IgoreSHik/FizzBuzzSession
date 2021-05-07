@@ -8,6 +8,7 @@ namespace AddressBook.Models
 {
     public class Address
     {
+        public int Id { get; set; }
         [Display(Name = "Twoja ulubiona ulica")]
         [Required(ErrorMessage = "No podaj ulice")]
         public string Street { get; set; }

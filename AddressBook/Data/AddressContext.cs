@@ -9,6 +9,7 @@ namespace AddressBook.Data
 {
     public class AddressContext : DbContext
     {
-            public DbSet<Address> Address { get; set; }
+        public AddressContext(DbContextOptions options) : base(options) { }
+        public DbSet<Address> Address { get; set; }
     }
 }
