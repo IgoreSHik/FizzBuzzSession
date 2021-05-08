@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AddressBook.Data;
 
 namespace AddressBook.Pages
 {
@@ -18,9 +19,10 @@ namespace AddressBook.Pages
         [BindProperty(SupportsGet = true)]
         public string Name { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, AddressContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public void OnGet()
@@ -39,5 +41,7 @@ namespace AddressBook.Pages
             }
             return RedirectToPage("./Privacy");
         }
+
+        private readonly AddressContext _context;
     }
 }
